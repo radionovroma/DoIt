@@ -1,0 +1,16 @@
+body {
+  background-color: #222;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+}
+
+svg {
+  fill: #aaa;
+}
+
+@import './blocks/header-block';
+@import './blocks/sidebar-block';
+@import './blocks/main-block';

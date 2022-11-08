@@ -4,8 +4,125 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>DoIt</title>
   </head>
   <body>
+    <header class="header-block">
+      <div class="header-block__wrap header">
+        <div class="header__nav nav">
+          <button class="nav__sidebar-button sidebar-button" type="button">
+            <svg class="sidebar-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </button>
+          <a class="nav__logo logo" href="./index.html"></a>
+        </div>
+        <div class="header__filter-box filter-box">
+          <div class="filter-box__wrap filter-wrap">
+            <form class="filter-wrap__form filter-form">
+              <button class="filter-form__search-button search-button" type="button">
+                <svg class="search-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"
+                  />
+                </svg>
+              </button>
+              <label class="filter-form__search filter-search">
+                <input class="filter-search__input" type="text" placeholder="Search" />
+              </label>
+              <button class="filter-form__clear-button clear-button" type="button">
+                <svg class="clear-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                  <path
+                    d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+                  />
+                </svg>
+              </button>
+            </form>
+            <button class="filter-form__filter-button filter-button" type="button">
+              <svg class="filter-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path
+                  d="M151.6 469.6a32.1 32.1 0 0 1-47.2 0l-88-96a32 32 0 1 1 47.2-43.2L96 365.7V64a32 32 0 1 1 64 0v301.7l32.4-35.4a32 32 0 0 1 47.2 43.2l-88 96zM320 480a32 32 0 1 1 0-64h32a32 32 0 1 1 0 64h-32zm0-128a32 32 0 1 1 0-64h96a32 32 0 1 1 0 64h-96zm0-128a32 32 0 1 1 0-64h160a32 32 0 1 1 0 64H320zm0-128a32 32 0 1 1 0-64h224a32 32 0 1 1 0 64H320z"
+                />
+              </svg>
+            </button>
+          </div>
+          <button class="filter-box__grid-button grid-button" type="button">
+            <svg class="grid-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path
+                d="M40 352c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0zm192 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0zM40 320l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40zM232 192c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0zM40 160l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40L40 32C17.9 32 0 49.9 0 72l0 48c0 22.1 17.9 40 40 40zM232 32c-22.1 0-40 17.9-40 40l0 48c0 22.1 17.9 40 40 40l48 0c22.1 0 40-17.9 40-40l0-48c0-22.1-17.9-40-40-40l-48 0z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <nav class="sidebar-block">
+        <div class="sidebar-block__wrap sidebar">
+          <div class="sidebar__logo"></div>
+          <ul class="sidebar__list sidebar-list">
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                  <path
+                    d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"
+                  />
+                </svg>
+                <p class="sidebar-item-button__text">Notes</p>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"
+                  />
+                </svg>
+                <p class="sidebar-item-button__text">Reminders</p>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M345 39.1L472.8 168.4c52.4 53 52.4 138.2 0 191.2L360.8 472.9c-9.3 9.4-24.5 9.5-33.9 .2s-9.5-24.5-.2-33.9L438.6 325.9c33.9-34.3 33.9-89.4 0-123.7L310.9 72.9c-9.3-9.4-9.2-24.6 .2-33.9s24.6-9.2 33.9 .2zM0 229.5V80C0 53.5 21.5 32 48 32H197.5c17 0 33.3 6.7 45.3 18.7l168 168c25 25 25 65.5 0 90.5L277.3 442.7c-25 25-65.5 25-90.5 0l-168-168C6.7 262.7 0 246.5 0 229.5zM144 144c0-17.7-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32z"
+                  />
+                </svg>
+                <p class="sidebar-item-button__text">Tags</p>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zM432 456c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"
+                  />
+                </svg>
+                <p class="sidebar-item-button__text">Archive</p>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                  <path
+                    d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
+                  />
+                </svg>
+                <p class="sidebar-item-button__text">Trash</p>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-block"></div>
+    </main>
   </body>
 </html>
