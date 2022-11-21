@@ -18,12 +18,14 @@
   }
 }
 
-.sidebar__logo {
-  height: 30px;
-  padding: 15px 19px;
-
-  svg {
+.sidebar{
+  &__logo{
     height: 30px;
+    padding: 15px 19px;
+
+    svg{
+      height: 30px;
+    }
   }
 }
 
@@ -61,17 +63,17 @@
 
     &__wrap {
       width: 60px;
+      height: calc(100% - 10px);
+      padding-top: 10px;
       background-color: #222;
       box-shadow: none;
     }
   }
 
-  .sidebar__logo {
-    display: none;
-  }
-
-  .sidebar-list {
-    margin-top: 10px;
+  .sidebar {
+    &__logo {
+      display: none;
+    }
   }
 
   .sidebar-item {
@@ -101,7 +103,7 @@
   .sidebar-block.active {
     width: 200px;
 
-    .sidebar-block__wrap {
+    .sidebar {
       width: 200px;
     }
 

@@ -1,15 +1,13 @@
 import 'reset-css';
 import 'styles/main.scss';
-import logo from './assets/DoIt.svg';
+import addingForm from './js/document/addingForm';
+import header from './js/document/header';
+import sidebar from './js/document/sidebar';
+import faviconLink from './assets/favicon.png';
 
-const headerLogoDiv = document.querySelector('.nav__logo');
-headerLogoDiv.innerHTML = `${logo}`;
-const sidebarLogoDiv = document.querySelector('.sidebar__logo');
-sidebarLogoDiv.innerHTML = `${logo}`;
+const favicon = document.querySelector('link[rel="icon"]');
+favicon.setAttribute('href', `${faviconLink}`);
 
-const sidebarButton = document.querySelector('.sidebar-button');
-const sidebar = document.querySelector('.sidebar-block');
-
-sidebarButton.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
-});
+header.init();
+sidebar.init();
+addingForm.init();
