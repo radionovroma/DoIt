@@ -1,4 +1,5 @@
-import editingBox from './editingBox';
+import editingBlock from './editingBox';
+import checklist from './checklist';
 
 const addingForm = {
   mainBlock: document.querySelector('.main-block'),
@@ -32,67 +33,95 @@ const addingForm = {
           <input class="input-box__title" type="text" placeholder="Title">
         </label>
         <label>
-          <textarea class="input-box__description" placeholder="Note" autofocus></textarea>
+          <textarea class="input-box__description" placeholder="Note"></textarea>
         </label>
       </div>
     `;
     this.mainBlock.append(this.form);
   },
   unfoldForm() {
-    this.form.innerHTML += `${editingBox.editing}`;
-    const formInput = document.querySelector('.input-box__input');
+    this.form.append(editingBlock.block);
+    const formInput = this.form.querySelector('.input-box__input');
     [formInput, this.unfoldButton].forEach((item) => {
       item.addEventListener('click', () => {
         this.form.classList.add('active');
-        const textarea = document.querySelector('.input-box__description');
-        textarea.focus();
+        const textarea = this.form.querySelector('.input-box__description');
+        textarea.style.display = 'block';
         textarea.style.height = '32px';
-        this.calcTextareaHeight(textarea);
+        textarea.focus();
+        checklist.calcTextareaHeight(textarea);
       });
     });
   },
-  calcTextareaHeight(textarea) {
-    textarea.addEventListener('input', (e) => {
-      e.target.style.height = '0';
-      const textareaHeight = Math.max(e.target.scrollHeight, 32);
-      e.target.style.height = `${textareaHeight}px`;
+  addSwitchingEvent() {
+    const title = this.form.querySelector('.input-box__title');
+    title.addEventListener('keydown', (e) => {
+      let nextField = this.form.querySelector('.adding-field__checkbox-textarea');
+      if (nextField === null) {
+        nextField = this.form.querySelector('textarea');
+      }
+      if (e.key === 'Enter') {
+        nextField.focus();
+        e.preventDefault();
+      }
     });
   },
   rollbackFormByClick() {
     document.addEventListener('click', (e) => {
-      if (document.body.clientWidth > 768 && this.form.classList.contains('active')) {
+      if (this.form.classList.contains('active') && document.body.clientWidth >= 1024) {
         const withinBoundaries = e.composedPath().includes(this.form);
         if (!withinBoundaries) {
-          this.form.classList.remove('active');
-          this.form.reset();
+          this.rollbackForm();
         }
       }
     });
   },
   rollbackFormByEsc() {
     document.addEventListener('keydown', (e) => {
-      if (document.body.clientWidth > 768) {
-        if (e.code === 'Escape') {
-          this.form.classList.remove('active');
-          this.form.reset();
-        }
+      if (document.body.clientWidth >= 1024 && e.key === 'Escape') {
+        this.rollbackForm();
       }
     });
   },
   rollbackFormByBtn() {
-    const backButton = document.querySelector('.nav-box__back-button');
-    const cancelButton = document.querySelector('.editing-box__cancel-button');
-    [backButton, cancelButton].forEach((btn) => {
-      btn.addEventListener('click', () => {
-        this.form.classList.remove('active');
-        this.form.reset();
+    const backButton = this.form.querySelector('.nav-box__back-button');
+    const cancelButton = editingBlock.block.querySelector('.editing-box__cancel-button');
+    [backButton, cancelButton].forEach((button) => {
+      button.addEventListener('click', () => {
+        this.rollbackForm();
       });
     });
+  },
+  rollbackForm() {
+    this.form.classList.remove('active');
+    const textarea = this.form.querySelector('.input-box__description');
+    textarea.style.display = 'none';
+    const checklistButton = editingBlock.block.querySelector('.checklist-button');
+    checklistButton.removeAttribute('disabled');
+    checklistButton.classList.remove('pressed');
+    this.form.reset();
+    this.removeCheckboxes();
+    this.removeAddingField();
+  },
+  removeCheckboxes() {
+    const tasksList = this.form.querySelectorAll('.checkbox-item');
+    tasksList.forEach((item) => {
+      item.remove();
+    });
+  },
+  removeAddingField() {
+    const field = this.form.querySelector('.input-box__adding-field');
+    if (field) {
+      field.remove();
+    }
   },
   init() {
     this.createButton();
     this.createForm();
     this.unfoldForm();
+    checklist.init();
+    editingBlock.init();
+    this.addSwitchingEvent();
     this.rollbackFormByClick();
     this.rollbackFormByEsc();
     this.rollbackFormByBtn();
