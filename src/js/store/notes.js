@@ -192,7 +192,7 @@ const notes = {
   ],
   addNote(title, description, tasksList) {
     const note = {
-      id: this.addNoteId(),
+      id: this.getNoteId(),
       title,
       date: new Date(),
       changed: false,
@@ -204,7 +204,7 @@ const notes = {
     }
     this.list.push(note);
   },
-  addNoteId() {
+  getNoteId() {
     return this.list.length ? (this.list[this.list.length - 1].id + 1) : 0;
   },
 };

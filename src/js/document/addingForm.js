@@ -6,7 +6,7 @@ const addingForm = {
   mainBlock: document.querySelector('.main-block'),
   form: document.createElement('form'),
   unfoldButton: document.createElement('button'),
-  createButton() {
+  renderButton() {
     this.unfoldButton.classList.add('main-block__adding-button');
     this.unfoldButton.setAttribute('type', 'button');
     this.unfoldButton.innerHTML = `
@@ -16,7 +16,7 @@ const addingForm = {
     `;
     this.mainBlock.append(this.unfoldButton);
   },
-  createForm() {
+  renderForm() {
     this.form.classList.add('main-block__adding-form');
     this.form.classList.add('adding-form');
     this.form.innerHTML = `
@@ -137,8 +137,8 @@ const addingForm = {
     }
   },
   init() {
-    this.createButton();
-    this.createForm();
+    this.renderButton();
+    this.renderForm();
     this.unfoldForm();
     checklist.init();
     editingBlock.init();

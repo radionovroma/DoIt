@@ -1,6 +1,6 @@
 const checklist = {
   newTaskField: document.createElement('div'),
-  createNewTaskField() {
+  renderNewTaskField() {
     this.newTaskField.classList.add('input-box__adding-field');
     this.newTaskField.classList.add('adding-field');
     this.newTaskField.innerHTML = `
@@ -10,7 +10,7 @@ const checklist = {
       <textarea class="adding-field__checkbox-textarea checkbox-textarea" placeholder="List item"></textarea>
     `;
   },
-  createCheckbox(id) {
+  renderCheckbox(id) {
     const fieldset = document.createElement('fieldset');
     fieldset.classList.add('input-box__checkbox-item');
     fieldset.classList.add('checkbox-item');
@@ -129,7 +129,7 @@ const checklist = {
         } else {
           this.lastCheckboxId += 1;
         }
-        const fieldset = this.createCheckbox(this.lastCheckboxId);
+        const fieldset = this.renderCheckbox(this.lastCheckboxId);
         this.newTaskField.before(fieldset);
         this.focusNewTaskField(fieldset);
         this.removeTaskByButton(fieldset);
@@ -145,7 +145,7 @@ const checklist = {
     });
   },
   init() {
-    this.createNewTaskField();
+    this.renderNewTaskField();
     this.focusNewTaskFieldByClick();
     this.addNewTaskFieldEvent();
   },

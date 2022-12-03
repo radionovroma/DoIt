@@ -8,7 +8,7 @@ import checklist from './checklist';
 
 const editingBlock = {
   block: document.createElement('div'),
-  createEditingBox() {
+  renderEditingBox() {
     this.block.classList.add('adding-form__editing-box');
     this.block.classList.add('editing-box');
     this.block.innerHTML = `
@@ -59,7 +59,7 @@ const editingBlock = {
         const tasksList = textarea.value.split(/\r?\n/).filter((item) => item);
         checklist.lastCheckboxId = tasksList.length - 1;
         tasksList.forEach((item, id) => {
-          const fieldset = checklist.createCheckbox(id);
+          const fieldset = checklist.renderCheckbox(id);
           const fieldsetTextarea = fieldset.querySelector('.checkbox-label__textarea');
           fieldsetTextarea.value = `${item}`;
           checklist.removeTaskByButton(fieldset);
@@ -79,7 +79,7 @@ const editingBlock = {
     });
   },
   init() {
-    this.createEditingBox();
+    this.renderEditingBox();
     this.changingToChecklist();
   },
 };
