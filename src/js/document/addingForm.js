@@ -1,5 +1,6 @@
 import editingBlock from './editingBox';
 import checklist from './checklist';
+import notes from '../store/notes';
 
 const addingForm = {
   mainBlock: document.querySelector('.main-block'),
@@ -66,6 +67,25 @@ const addingForm = {
       }
     });
   },
+  addNote() {
+    const title = this.form.querySelector('.input-box__title').value.trim();
+    const description = this.form.querySelector('.input-box__description').value.trim();
+    const checkList = this.form.querySelectorAll('.checkbox-item');
+    const tasksList = [];
+    if (checkList.length) {
+      checkList.forEach((item) => {
+        const id = +item.querySelector('.checkbox').getAttribute('value');
+        const task = item.querySelector('.checkbox-textarea').value.trim();
+        const completed = item.querySelector('.checkbox').checked;
+        if (task) {
+          tasksList.push({ id, task, completed });
+        }
+      });
+    }
+    if (title || description || tasksList.length) {
+      notes.addNote(title, description, tasksList);
+    }
+  },
   rollbackFormByClick() {
     document.addEventListener('click', (e) => {
       if (this.form.classList.contains('active') && document.body.clientWidth >= 1024) {
@@ -99,6 +119,7 @@ const addingForm = {
     const checklistButton = editingBlock.block.querySelector('.checklist-button');
     checklistButton.removeAttribute('disabled');
     checklistButton.classList.remove('pressed');
+    this.addNote();
     this.form.reset();
     this.removeCheckboxes();
     this.removeAddingField();

@@ -15,7 +15,7 @@ const checklist = {
     fieldset.classList.add('input-box__checkbox-item');
     fieldset.classList.add('checkbox-item');
     fieldset.innerHTML = `
-      <input class="checkbox-item__checkbox checkbox" type="checkbox" id="cb${id}">
+      <input class="checkbox-item__checkbox checkbox" type="checkbox" id="cb${id}" value="${id}">
       <label class="checkbox-item__label checkbox-label" for="cb${id}">
         <svg viewBox="0 0 100 100">
           <path class="box" d="M82,89H18c-3.87,0-7-3.13-7-7V18c0-3.87,3.13-7,7-7h64c3.87,0,7,3.13,7,7v64C89,85.87,85.87,89,82,89z"/>
