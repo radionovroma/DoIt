@@ -16,7 +16,7 @@ const sidebar = {
   rollbackSidebarByClick() {
     this.sidebarBlock.addEventListener('click', (e) => {
       const withinBoundaries = e.composedPath().includes(this.sidebarWrap);
-      if (!withinBoundaries && document.body.clientWidth < 768) {
+      if (!withinBoundaries && document.body.clientWidth < 1024) {
         this.sidebarBlock.classList.remove('active');
       }
     });

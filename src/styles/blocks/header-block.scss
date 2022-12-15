@@ -1,6 +1,16 @@
 .header-block {
   padding: 10px;
 
+  &.scrolled{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+
+    .header-block__wrap{
+      box-shadow: 0 3px 3px 0 rgba(#000, 0.2);
+    }
+  }
+
   &__wrap {
     display: flex;
     gap: 15px;
@@ -89,11 +99,21 @@
 
 @media (min-width: 1024px) {
   .header-block {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    width: 100%;
     padding: 0;
-    border-bottom: 1px solid #aaa;
+    border-bottom: 1px solid #666;
+
+    &.scrolled{
+      z-index: 3;
+      border-bottom: none;
+      box-shadow: 3px 3px 3px 0 rgba(#000, 0.5);
+    }
 
     &__wrap {
-      gap: 30px;
+      gap: 60px;
       padding: 10px 10px 9px;
       border-radius: 0;
       background-color: #222;
@@ -184,7 +204,7 @@
 
       &__input {
         height: 30px;
-        font-size: 16px;
+        font-size: 18px;
 
         &::placeholder {
           color: #aaa;

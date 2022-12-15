@@ -1,7 +1,7 @@
 .sidebar-block {
-  position: absolute;
+  position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   display: none;
   width: 100%;
   height: 100%;
@@ -56,12 +56,17 @@
 
 @media (min-width: 1024px) {
   .sidebar-block {
-    position: static;
+    position: sticky;
+    top: 70px;
+    z-index: 2;
     display: block;
     width: 60px;
     height: calc(100vh - 70px);
 
     &__wrap {
+      position: fixed;
+      top: 70px;
+      z-index: 3;
       width: 60px;
       height: calc(100% - 10px);
       padding-top: 10px;
@@ -101,10 +106,10 @@
   }
 
   .sidebar-block.active {
-    width: 200px;
+    width: 250px;
 
     .sidebar {
-      width: 200px;
+      width: 250px;
     }
 
     .sidebar-item {
@@ -120,7 +125,7 @@
 
         &__text {
           display: block;
-          font-size: 16px;
+          font-size: 18px;
         }
       }
     }
