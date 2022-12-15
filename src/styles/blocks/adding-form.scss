@@ -1,6 +1,13 @@
 .main-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px 0 10px;
+
   &__adding-button{
-    position: absolute;
+    position: fixed;
+    z-index: 2;
     bottom: 20px;
     right: 20px;
     display: flex;
@@ -8,7 +15,7 @@
     border: none;
     border-radius: 10px;
     background-color: #00aeef;
-    box-shadow: 4px 4px 4px 0 rgba(#000, 0.3);
+    box-shadow: 3px 3px 3px 0 rgba(#000, 0.3);
 
     svg{
       width: 26px;
@@ -23,10 +30,11 @@
 
     &.active{
       position: absolute;
+      z-index: 2;
       top: 0;
       display: block;
       width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       background-color: #222;
     }
   }
@@ -96,7 +104,7 @@
   }
 
   &__title{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
   }
 
@@ -127,7 +135,7 @@
     color: #aaa;
 
     &::placeholder{
-      color: #aaa;
+      color: #666;
     }
 
     &:focus-visible{
@@ -192,9 +200,9 @@
         cursor: default;
 
         svg {
-          width: 25px;
-          height: 25px;
-          padding: 7px;
+          width: 20px;
+          height: 20px;
+          padding: 10px;
           cursor: pointer;
           stroke: #aaa;
           stroke-width: 8;
@@ -211,10 +219,6 @@
             fill: none;
             transition: stroke-dashoffset 200ms linear;
           }
-        }
-
-        .checkbox-textarea{
-
         }
 
         .delete-button{
@@ -275,6 +279,9 @@
 
 @media (min-width: 1024px){
   .main-block{
+    flex: 1;
+    gap: 30px;
+    width: calc(100vw - 310px);
     padding: 30px;
 
     &__adding-button{
@@ -283,12 +290,12 @@
 
     &__adding-form{
       display: block;
-      width: 35%;
+      width: 35vw;
       min-width: 450px;
       padding: 10px;
-      border: 1px solid #aaa;
+      border: 1px solid #666;
       border-radius: 10px;
-      box-shadow: 6px 6px 6px 0 rgba(#000, 0.3);
+      box-shadow: 3px 3px 3px 0 rgba(#000, 0.3);
 
       .nav-box{
         display: none;
@@ -305,6 +312,10 @@
           width: calc(100% - 20px);
           height: 32px;
           font-size: 14px;
+
+          &::placeholder{
+            color: #aaa;
+          }
         }
 
         &__title, &__description{
@@ -318,7 +329,7 @@
 
       &.active{
         position: static;
-        width: 35%;
+        width: 35vw;
         min-width: 450px;
         min-height: 110px;
 
@@ -340,6 +351,10 @@
           }
           &__title, &__description{
             width: calc(100% - 20px);
+
+            &::placeholder{
+              color: #aaa;
+            }
           }
         }
 
@@ -393,12 +408,19 @@
 
     .checkbox-textarea{
       font-size: 14px;
-      padding: 10px 0 0;
+      padding: 9px 0 0;
     }
 
     &__adding-field{
+      gap: 10px;
+      padding-left: 5px;
       margin: 0;
 
+      .adding-field-svg{
+        width: 18px;
+        height: 18px;
+        padding: 6px;
+      }
       &:hover{
 
         .adding-field-svg{
@@ -418,6 +440,7 @@
     }
 
     &__checkbox-item{
+      padding-left: 5px;
       margin-top: 0;
 
       .checkbox {
@@ -425,9 +448,9 @@
           gap: 10px;
 
           svg {
-            width: 20px;
-            height: 20px;
-            padding: 10px;
+            width: 18px;
+            height: 18px;
+            padding: 6px;
 
             &:hover{
               cursor: pointer;
@@ -440,7 +463,7 @@
             svg {
               width: 18px;
               height: 18px;
-              padding: 11px;
+              padding: 6px;
 
               &:hover{
                 path{
@@ -452,20 +475,15 @@
         }
 
         &:checked + .checkbox-label {
-
           svg{
-
             &:hover{
               stroke: #aaa;
             }
           }
 
           .delete-button{
-
             svg {
-
               &:hover{
-
                 path{
                   stroke: #aaa;
                 }
@@ -489,7 +507,7 @@
       background-color: #222;
       font-family: Raleway, 'Times New Roman', serif;
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 500;
       color: #aaa;
 
       &:hover{

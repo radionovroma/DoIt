@@ -1,0 +1,167 @@
+.note{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: calc((100vw - 96px)/2);
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #666;
+  border-radius: 10px;
+
+  &__title{
+    color: #aaa;
+    font-family: Raleway, 'Times New Roman', serif;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  &__description{
+    color: #aaa;
+    font-family: Raleway, 'Times New Roman', serif;
+    font-size: 16px;
+  }
+
+  &-checklist{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .checkbox{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      svg{
+        width: 16px;
+        height: 16px;
+        padding-right: 5px;
+        fill: none;
+        stroke: #aaaaaa;
+        stroke-width: 8px;
+
+        .check{
+          stroke: none;
+        }
+      }
+
+      &__task{
+        width: calc(100% - 15px);
+        color: #aaa;
+        font-family: Raleway, 'Times New Roman', serif;
+        font-size: 16px;
+      }
+    }
+
+    &_checked{
+      display: none;
+      .checkbox{
+        svg{
+          stroke: #666;
+
+          .check{
+            stroke: #666
+          }
+        }
+
+        &__task{
+          color: #666;
+        }
+      }
+    }
+  }
+
+  &__checked-boxes-info{
+    color: #666;
+    font-family: Raleway, 'Times New Roman', serif;
+    font-size: 16px;
+  }
+}
+
+.note-placeholder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: calc(100vh - 91px);
+
+  svg{
+    fill: none;
+
+    path{
+      stroke: #666;
+      stroke-width: 2px;
+    }
+  }
+
+  &__title{
+    font-family: Raleway, 'Times New Roman', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #666;
+  }
+}
+
+@media (min-width: 500px){
+  .note {
+    width: calc((100vw - 110px)/3);
+  }
+}
+
+@media (min-width: 900px){
+  .note {
+    width: calc((100vw - 140px)/4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .note {
+    gap: 10px;
+    width: 210px;
+    padding: 15px;
+    margin-bottom: 15px;
+    cursor: default;
+
+    &__title {
+      font-size: 16px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &-checklist {
+      gap: 10px;
+
+      .checkbox {
+        svg {
+          width: 14px;
+          height: 14px;
+          padding-right: 10px;
+        }
+
+        &__task {
+          font-size: 14px;
+        }
+      }
+
+      &_checked {
+        display: flex;
+      }
+    }
+
+    &__checked-boxes-info {
+      display: none;
+    }
+  }
+
+  .note-placeholder{
+    gap: 15px;
+    height: calc(100vh - 185px);
+
+    &__title {
+      font-size: 18px;
+    }
+  }
+}

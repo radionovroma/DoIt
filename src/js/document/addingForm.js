@@ -1,6 +1,7 @@
 import editingBlock from './editingBox';
 import checklist from './checklist';
 import notes from '../store/notes';
+import noteList from './noteList';
 
 const addingForm = {
   mainBlock: document.querySelector('.main-block'),
@@ -45,6 +46,9 @@ const addingForm = {
     const formInput = this.form.querySelector('.input-box__input');
     [formInput, this.unfoldButton].forEach((item) => {
       item.addEventListener('click', () => {
+        if (document.body.clientWidth < 1024) {
+          document.body.style.overflowY = 'hidden';
+        }
         this.form.classList.add('active');
         const textarea = this.form.querySelector('.input-box__description');
         textarea.style.display = 'block';
@@ -113,6 +117,9 @@ const addingForm = {
     });
   },
   rollbackForm() {
+    if (document.body.clientWidth < 1024) {
+      document.body.style.overflowY = 'auto';
+    }
     this.form.classList.remove('active');
     const textarea = this.form.querySelector('.input-box__description');
     textarea.style.display = 'none';
@@ -120,6 +127,7 @@ const addingForm = {
     checklistButton.removeAttribute('disabled');
     checklistButton.classList.remove('pressed');
     this.addNote();
+    noteList.renderNotes();
     this.form.reset();
     this.removeCheckboxes();
     this.removeAddingField();

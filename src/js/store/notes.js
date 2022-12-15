@@ -97,7 +97,7 @@ const notes = {
       title: 'Donec vitae sapien ut libero venenatis faucibus',
       changed: true,
       data: new Date(2022, 10, 26, 20, 26, 17, 937),
-      description: 'Nullam quis ante/nEtiam sit amet orci eget eros faucibus tincidunt/nDuis leo/nSed fringilla mauris sit amet nibh/nDonec sodales sagittis magna/nSed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero/nFusce vulputate eleifend sapien/nVestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus/nNullam accumsan lorem in dui/nCras ultricies mi eu turpis hendrerit fringilla',
+      description: 'Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla',
     },
     {
       id: 10,
