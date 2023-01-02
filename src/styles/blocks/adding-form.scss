@@ -11,17 +11,21 @@
     bottom: 20px;
     right: 20px;
     display: flex;
-    padding: 7px;
+    padding: 5px;
     border: none;
     border-radius: 10px;
     background-color: #00aeef;
     box-shadow: 3px 3px 3px 0 rgba(#000, 0.3);
 
     svg{
-      width: 26px;
-      height: 26px;
-      fill: #fff;
+      width: 30px;
+      height: 30px;
       filter: drop-shadow(2px 1px 1px #666);
+
+      path{
+        stroke: #fff;
+        stroke-width: 10;
+      }
     }
   }
 
@@ -54,8 +58,8 @@
     background-color: #222;
 
     svg{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 }
@@ -64,13 +68,13 @@
   button{
     width: 40px;
     height: 40px;
-    padding: 7px;
+    padding: 5px;
     border: none;
     background-color: #222;
 
     svg{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 }
@@ -150,11 +154,15 @@
     gap: 15px;
     margin-top: 10px;
 
-    .adding-field-svg{
-      width: 20px;
-      height: 20px;
-      padding: 10px;
-      fill: #666;
+    svg{
+      width: 26px;
+      height: 26px;
+      padding: 7px;
+      cursor: pointer;
+
+      path{
+        stroke: #666;
+      }
     }
 
     .checkbox-textarea{
@@ -174,19 +182,18 @@
 
     .checkbox-label{
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 15px;
 
       &__textarea{
         flex: 1;
         height: 26px;
-        padding: 5px 0 0;
+        padding: 9px 0 0;
         resize: none;
       }
     }
 
     .delete-button {
-      height: 40px;
       padding: 0;
       border: none;
       background-color: #222;
@@ -197,15 +204,11 @@
       pointer-events: none;
 
       & + .checkbox-label {
-        cursor: default;
 
         svg {
-          width: 20px;
-          height: 20px;
-          padding: 10px;
-          cursor: pointer;
-          stroke: #aaa;
-          stroke-width: 8;
+          width: 26px;
+          height: 26px;
+          padding: 7px;
 
           .box {
             stroke-dasharray: 320;
@@ -219,14 +222,20 @@
             fill: none;
             transition: stroke-dashoffset 200ms linear;
           }
+
+          &:hover{
+            path{
+              stroke: #fff;
+            }
+          }
         }
 
         .delete-button{
           svg {
             display: block;
-            width: 20px;
-            height: 20px;
-            padding: 10px;
+            width: 26px;
+            height: 26px;
+            padding: 7px;
 
             path{
               stroke: #aaa;
@@ -236,7 +245,12 @@
       }
 
       &:checked + .checkbox-label {
-        svg{
+        svg:hover{
+          path{
+            stroke: #aaa;
+          }
+        }
+        path{
           stroke: #666;
         }
 
@@ -250,10 +264,8 @@
         }
 
         .delete-button{
-          svg {
-            path{
-              stroke: #666;
-            }
+          path{
+            stroke: #666;
           }
         }
       }
@@ -376,55 +388,52 @@
 
   .editing-item{
     button{
-      padding: 11px;
+      padding: 7px;
 
       &:hover{
         border-radius: 50%;
         background-color: #333;
         cursor: pointer;
 
-        svg{
-          fill: #fff;
+        path{
+          stroke: #fff;
         }
       }
 
       svg{
-        width: 18px;
-        height: 18px;
+        width: 22px;
+        height: 22px;
       }
 
       &.pressed:hover{
         cursor: not-allowed;
         background-color: #222;
 
-        svg{
-          fill: #aaa;
+        path{
+          stroke: #aaa;
         }
       }
     }
   }
 
   .input-box{
-
     .checkbox-textarea{
       font-size: 14px;
-      padding: 9px 0 0;
+      padding: 10px 0 0;
     }
 
     &__adding-field{
       gap: 10px;
-      padding-left: 5px;
       margin: 0;
 
-      .adding-field-svg{
-        width: 18px;
-        height: 18px;
-        padding: 6px;
+      svg{
+        width: 22px;
+        height: 22px;
       }
       &:hover{
 
-        .adding-field-svg{
-          fill: #aaa;
+        path{
+          stroke: #aaa;
         }
 
         .checkbox-textarea{
@@ -440,17 +449,17 @@
     }
 
     &__checkbox-item{
-      padding-left: 5px;
       margin-top: 0;
 
       .checkbox {
         & + .checkbox-label {
           gap: 10px;
+          cursor: default;
 
           svg {
-            width: 18px;
-            height: 18px;
-            padding: 6px;
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
 
             &:hover{
               cursor: pointer;
@@ -459,11 +468,10 @@
           }
 
           .delete-button{
-
             svg {
-              width: 18px;
-              height: 18px;
-              padding: 6px;
+              width: 20px;
+              height: 20px;
+              padding: 8px;
 
               &:hover{
                 path{
@@ -482,11 +490,9 @@
           }
 
           .delete-button{
-            svg {
-              &:hover{
-                path{
-                  stroke: #aaa;
-                }
+            &:hover{
+              path{
+                stroke: #aaa;
               }
             }
           }
@@ -498,6 +504,7 @@
   .editing-box{
     &__list{
       gap: 10px;
+      margin-left: -2px;
     }
 
     &__cancel-button{

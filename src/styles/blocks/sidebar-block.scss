@@ -25,6 +25,10 @@
 
     svg{
       height: 40px;
+
+      path{
+        stroke: none;
+      }
     }
   }
 }
@@ -40,9 +44,9 @@
     background-color: #333;
 
     &__icon {
-      width: 25px;
-      height: 25px;
-      padding: 12px;
+      width: 30px;
+      height: 30px;
+      padding: 10px;
     }
 
     &__text {
@@ -87,16 +91,25 @@
     &-button {
       padding: 5px;
       background-color: #222;
+      cursor: pointer;
 
       &:hover {
         border-radius: 50%;
         background-color: #333;
+
+        path{
+          stroke: #fff;
+        }
+
+        p{
+          color: #fff;
+        }
       }
 
       &__icon {
-        width: 24px;
-        height: 24px;
-        padding: 8px;
+        width: 30px;
+        height: 30px;
+        padding: 5px;
       }
 
       &__text {

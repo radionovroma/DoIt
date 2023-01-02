@@ -1,3 +1,5 @@
+import arrowLeftSvg from 'assets/arrow_left.svg';
+import plusSvg from 'assets/plus.svg';
 import editingBlock from './editingBox';
 import checklist from './checklist';
 import notes from '../store/notes';
@@ -11,9 +13,7 @@ const addingForm = {
     this.unfoldButton.classList.add('main-block__adding-button');
     this.unfoldButton.setAttribute('type', 'button');
     this.unfoldButton.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
-      </svg>
+      ${plusSvg}
     `;
     this.mainBlock.append(this.unfoldButton);
   },
@@ -23,8 +23,7 @@ const addingForm = {
     this.form.innerHTML = `
       <div class="adding-form__nav-box nav-box">
         <button class="nav-box__back-button" type="button">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-          </svg>
+          ${arrowLeftSvg}
         </button>
       </div>
       <div class="adding-form__input-box input-box">

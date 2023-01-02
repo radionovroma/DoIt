@@ -1,9 +1,9 @@
-import checklistButtonSvg from 'assets/checklist-button.svg';
-import reminderButtonSvg from 'assets/reminder-button.svg';
-import pinButtonSvg from 'assets/pin-button.svg';
-import tagButtonSvg from 'assets/tag-button.svg';
-import archiveButtonSvg from 'assets/archive-button.svg';
-import trashButtonSvg from 'assets/trash-button.svg';
+import checklistButtonSvg from 'assets/checkbox.svg';
+import reminderButtonSvg from 'assets/bell.svg';
+import pinButtonSvg from 'assets/pin.svg';
+import tagButtonSvg from 'assets/tag.svg';
+import archiveButtonSvg from 'assets/archive.svg';
+import trashButtonSvg from 'assets/trash.svg';
 import checklist from './checklist';
 
 const editingBlock = {

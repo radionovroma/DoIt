@@ -82,16 +82,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   width: 100%;
   height: calc(100vh - 91px);
 
   svg{
-    fill: none;
+    width: 150px;
+    height: 150px;
 
     path{
       stroke: #666;
-      stroke-width: 2px;
+      stroke-width: 2;
     }
   }
 
@@ -148,6 +148,9 @@
 
       &_checked {
         display: flex;
+        path{
+          stroke: #666;
+        }
       }
     }
 
@@ -157,8 +160,12 @@
   }
 
   .note-placeholder{
-    gap: 15px;
     height: calc(100vh - 185px);
+
+    svg{
+      width: 200px;
+      height: 200px;
+    }
 
     &__title {
       font-size: 18px;

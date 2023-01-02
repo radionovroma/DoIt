@@ -1,0 +1,7 @@
+<svg class="trash-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 31H79" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M42 46V68" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M57 46V68" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M24 31L27.6429 75.5714C27.6429 77.5416 28.4105 79.4311 29.7768 80.8242C31.1431 82.2173 32.9963 83 34.9286 83H64.0714C66.0037 83 67.8569 82.2173 69.2232 80.8242C70.5895 79.4311 71.3571 77.5416 71.3571 75.5714L75 31" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M38 31V20.5C38 19.5717 38.4039 18.6815 39.1228 18.0251C39.8416 17.3687 40.8167 17 41.8333 17H57.1667C58.1833 17 59.1584 17.3687 59.8772 18.0251C60.5961 18.6815 61 19.5717 61 20.5V31" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

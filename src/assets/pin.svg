@@ -1,0 +1,5 @@
+<svg class="pin-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M61.7143 19L44.5714 36.1429L27.4286 42.5714L21 49L51 79L57.4286 72.5714L63.8571 55.4286L81 38.2857" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M36 64L17 83" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M60 17L83 40" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

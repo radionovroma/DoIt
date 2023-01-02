@@ -23,13 +23,13 @@
 .nav{
   &__sidebar-button{
     height: 40px;
-    padding: 7px;
+    padding: 5px;
     border: none;
     background-color: #333;
 
     svg{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 
@@ -49,13 +49,13 @@
 
   &__grid-button {
     height: 40px;
-    padding: 7px;
+    padding: 5px;
     border: none;
     background-color: #333;
 
     svg{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
     }
   }
 }
@@ -127,18 +127,22 @@
 
     .sidebar-button {
       height: 50px;
-      padding: 13px;
+      padding: 10px;
       background-color: #222;
+      cursor: pointer;
 
       &:hover {
         border-radius: 50%;
         background: #333;
-        cursor: pointer;
+
+        path{
+          stroke: #fff;
+        }
       }
 
       &__icon {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
       }
     }
 
@@ -158,18 +162,22 @@
 
     .grid-button {
       height: 50px;
-      padding: 13px;
+      padding: 10px;
       background-color: #222;
 
       &:hover {
         border-radius: 50%;
         background: #333;
         cursor: pointer;
+
+        path{
+          stroke: #fff;
+        }
       }
 
       &__icon {
-        width: 24px;
-        height: 24px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
@@ -184,18 +192,23 @@
     .search-button {
       display: block;
       height: 40px;
-      padding: 10px;
+      padding: 8px;
       border: none;
       background-color: #333;
+      cursor: pointer;
 
       &:hover {
         border-radius: 50%;
         background-color: #444;
+
+        path{
+          stroke: #fff;
+        }
       }
 
       &__icon {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
       }
     }
 
@@ -204,7 +217,8 @@
 
       &__input {
         height: 30px;
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 500;
 
         &::placeholder {
           color: #aaa;
