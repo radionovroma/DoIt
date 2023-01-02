@@ -1,0 +1,5 @@
+<svg class="archive-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 67V75C19 77.1217 19.8165 79.1566 21.2699 80.6569C22.7233 82.1571 24.6946 83 26.75 83H73.25C75.3054 83 77.2767 82.1571 78.7301 80.6569C80.1835 79.1566 81 77.1217 81 75V67" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M30 44L49.5 63L69 44" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M50 17V63" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

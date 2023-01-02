@@ -1,0 +1,42 @@
+@import './blocks/header-block';
+@import './blocks/sidebar-block';
+@import './blocks/adding-form';
+@import './blocks/note-list';
+
+body {
+  box-sizing: border-box;
+  background-color: #222;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #222;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #444;
+  }
+}
+
+main {
+  display: flex;
+  overflow: visible;
+}
+
+path{
+  stroke: #aaa;
+}
+
+@media (min-width: 1024px) {
+  body {
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+  }
+}

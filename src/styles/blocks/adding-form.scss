@@ -1,0 +1,528 @@
+.main-block{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px 0 10px;
+
+  &__adding-button{
+    position: fixed;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00aeef;
+    box-shadow: 3px 3px 3px 0 rgba(#000, 0.3);
+
+    svg{
+      width: 30px;
+      height: 30px;
+      filter: drop-shadow(2px 1px 1px #666);
+
+      path{
+        stroke: #fff;
+        stroke-width: 10;
+      }
+    }
+  }
+
+  &__adding-form{
+    display: none;
+
+    &.active{
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      background-color: #222;
+    }
+  }
+}
+
+.nav-box{
+  position: fixed;
+  width: calc(100vw - 30px);
+  padding: 15px;
+  border-bottom: 1px solid #aaa;
+
+  &__back-button{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    background-color: #222;
+
+    svg{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.editing-item{
+  button{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: none;
+    background-color: #222;
+
+    svg{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.input-box{
+  position: relative;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 175px);
+  max-height: calc(100vh - 175px);
+  padding: 15px 5px 15px 15px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #222;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #444;
+  }
+
+  &__input{
+    display: none;
+  }
+
+  &__title{
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__description{
+    min-height: calc(100vh - 230px);
+    margin-top: 10px;
+    padding: 0 10px;
+    resize: none;
+  }
+
+  &__title, &__description{
+    width: calc(100vw - 45px);
+  }
+
+  &__input, &__title, .checkbox-textarea{
+    height: 40px;
+    padding: 0 10px;
+  }
+
+  &__input, &__description, .checkbox-textarea{
+    font-size: 18px;
+  }
+
+  &__input, &__title, &__description, .checkbox-textarea{
+    border: none;
+    background-color: #222;
+    font-family: Raleway, 'Times New Roman', serif;
+    color: #aaa;
+
+    &::placeholder{
+      color: #666;
+    }
+
+    &:focus-visible{
+      outline: none;
+      caret-color: #aaa;
+    }
+  }
+
+  &__adding-field{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+
+    svg{
+      width: 26px;
+      height: 26px;
+      padding: 7px;
+      cursor: pointer;
+
+      path{
+        stroke: #666;
+      }
+    }
+
+    .checkbox-textarea{
+      flex: 1;
+      height: 26px;
+      padding: 5px 0 0;
+      resize: none;
+
+      &::placeholder{
+        color: #666;
+      }
+    }
+  }
+
+  &__checkbox-item{
+    margin-top: 10px;
+
+    .checkbox-label{
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+
+      &__textarea{
+        flex: 1;
+        height: 26px;
+        padding: 9px 0 0;
+        resize: none;
+      }
+    }
+
+    .delete-button {
+      padding: 0;
+      border: none;
+      background-color: #222;
+    }
+
+    .checkbox {
+      display: none;
+      pointer-events: none;
+
+      & + .checkbox-label {
+
+        svg {
+          width: 26px;
+          height: 26px;
+          padding: 7px;
+
+          .box {
+            stroke-dasharray: 320;
+            stroke-dashoffset: 0;
+            fill: #222;
+          }
+
+          .check {
+            stroke-dasharray: 70;
+            stroke-dashoffset: 70;
+            fill: none;
+            transition: stroke-dashoffset 200ms linear;
+          }
+
+          &:hover{
+            path{
+              stroke: #fff;
+            }
+          }
+        }
+
+        .delete-button{
+          svg {
+            display: block;
+            width: 26px;
+            height: 26px;
+            padding: 7px;
+
+            path{
+              stroke: #aaa;
+            }
+          }
+        }
+      }
+
+      &:checked + .checkbox-label {
+        svg:hover{
+          path{
+            stroke: #aaa;
+          }
+        }
+        path{
+          stroke: #666;
+        }
+
+        .check {
+          stroke-dashoffset: 0;
+        }
+
+        .checkbox-textarea{
+          text-decoration: line-through;
+          color: #666;
+        }
+
+        .delete-button{
+          path{
+            stroke: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+.editing-box{
+  position: fixed;
+  bottom: 0;
+  width: calc(100vw - 20px);
+  padding: 10px;
+
+  &__list{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__cancel-button{
+    display: none;
+  }
+}
+
+@media (min-width: 1024px){
+  .main-block{
+    flex: 1;
+    gap: 30px;
+    width: calc(100vw - 310px);
+    padding: 30px;
+
+    &__adding-button{
+      display: none;
+    }
+
+    &__adding-form{
+      display: block;
+      width: 35vw;
+      min-width: 450px;
+      padding: 10px;
+      border: 1px solid #666;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px 0 rgba(#000, 0.3);
+
+      .nav-box{
+        display: none;
+      }
+
+      .input-box{
+        position: static;
+        min-height: 32px;
+        padding: 0;
+        overflow: visible;
+
+        &__input{
+          display: block;
+          width: calc(100% - 20px);
+          height: 32px;
+          font-size: 14px;
+
+          &::placeholder{
+            color: #aaa;
+          }
+        }
+
+        &__title, &__description{
+          display: none;
+        }
+      }
+
+      .editing-box{
+        display: none;
+      }
+
+      &.active{
+        position: static;
+        width: 35vw;
+        min-width: 450px;
+        min-height: 110px;
+
+        .input-box{
+          max-height: 50vh;
+          overflow-y: auto;
+
+          &__input{
+            display: none;
+          }
+          &__title{
+            display: block;
+            height: 32px;
+            font-size: 16px;
+          }
+          &__description{
+            min-height: 32px;
+            font-size: 14px;
+          }
+          &__title, &__description{
+            width: calc(100% - 20px);
+
+            &::placeholder{
+              color: #aaa;
+            }
+          }
+        }
+
+        .editing-box{
+          position: static;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0;
+          margin-top: 10px;
+
+          &__cancel-button{
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .editing-item{
+    button{
+      padding: 7px;
+
+      &:hover{
+        border-radius: 50%;
+        background-color: #333;
+        cursor: pointer;
+
+        path{
+          stroke: #fff;
+        }
+      }
+
+      svg{
+        width: 22px;
+        height: 22px;
+      }
+
+      &.pressed:hover{
+        cursor: not-allowed;
+        background-color: #222;
+
+        path{
+          stroke: #aaa;
+        }
+      }
+    }
+  }
+
+  .input-box{
+    .checkbox-textarea{
+      font-size: 14px;
+      padding: 10px 0 0;
+    }
+
+    &__adding-field{
+      gap: 10px;
+      margin: 0;
+
+      svg{
+        width: 22px;
+        height: 22px;
+      }
+      &:hover{
+
+        path{
+          stroke: #aaa;
+        }
+
+        .checkbox-textarea{
+
+          &::placeholder{
+            color: #aaa;
+          }
+        }
+      }
+      .adding-field-svg:hover{
+        cursor: pointer;
+      }
+    }
+
+    &__checkbox-item{
+      margin-top: 0;
+
+      .checkbox {
+        & + .checkbox-label {
+          gap: 10px;
+          cursor: default;
+
+          svg {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+
+            &:hover{
+              cursor: pointer;
+              stroke: #fff;
+            }
+          }
+
+          .delete-button{
+            svg {
+              width: 20px;
+              height: 20px;
+              padding: 8px;
+
+              &:hover{
+                path{
+                  stroke: #fff;
+                }
+              }
+            }
+          }
+        }
+
+        &:checked + .checkbox-label {
+          svg{
+            &:hover{
+              stroke: #aaa;
+            }
+          }
+
+          .delete-button{
+            &:hover{
+              path{
+                stroke: #aaa;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .editing-box{
+    &__list{
+      gap: 10px;
+      margin-left: -2px;
+    }
+
+    &__cancel-button{
+      width: 100px;
+      padding: 0;
+      border: none;
+      background-color: #222;
+      font-family: Raleway, 'Times New Roman', serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #aaa;
+
+      &:hover{
+        background-color: #333;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

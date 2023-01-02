@@ -4,8 +4,115 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Template</title>
+    <link rel="icon" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <title>DoIt</title>
   </head>
   <body>
+    <header class="header-block">
+      <div class="header-block__wrap header">
+        <div class="header__nav nav">
+          <button class="nav__sidebar-button sidebar-button" type="button">
+            <svg class="sidebar-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 50H85" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 22H85" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M16 78H85" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <a class="nav__logo logo" href="./index.html"></a>
+        </div>
+        <div class="header__filter-box filter-box">
+          <div class="filter-box__wrap filter-wrap">
+            <form class="filter-wrap__form filter-form">
+              <button class="filter-form__search-button search-button" type="button">
+                <svg class="search-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M43 68C57.3594 68 69 56.5833 69 42.5C69 28.4167 57.3594 17 43 17C28.6406 17 17 28.4167 17 42.5C17 56.5833 28.6406 68 43 68Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M84 83L62 61" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+              <label class="filter-form__search filter-search">
+                <input class="filter-search__input" type="text" placeholder="Search" />
+              </label>
+              <button class="filter-form__clear-button clear-button" type="button">
+                <svg class="clear-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M83 17L17 83" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M17 17L83 83" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <button class="filter-box__grid-button grid-button" type="button">
+            <svg class="grid-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M37.8333 17H21.1667C18.8655 17 17 18.8655 17 21.1667V37.8333C17 40.1345 18.8655 42 21.1667 42H37.8333C40.1345 42 42 40.1345 42 37.8333V21.1667C42 18.8655 40.1345 17 37.8333 17Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M78.8333 17H62.1667C59.8655 17 58 18.8655 58 21.1667V37.8333C58 40.1345 59.8655 42 62.1667 42H78.8333C81.1345 42 83 40.1345 83 37.8333V21.1667C83 18.8655 81.1345 17 78.8333 17Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M37.8333 58H21.1667C18.8655 58 17 59.8655 17 62.1667V78.8333C17 81.1345 18.8655 83 21.1667 83H37.8333C40.1345 83 42 81.1345 42 78.8333V62.1667C42 59.8655 40.1345 58 37.8333 58Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M78.8333 58H62.1667C59.8655 58 58 59.8655 58 62.1667V78.8333C58 81.1345 59.8655 83 62.1667 83H78.8333C81.1345 83 83 81.1345 83 78.8333V62.1667C83 59.8655 81.1345 58 78.8333 58Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <nav class="sidebar-block">
+        <div class="sidebar-block__wrap sidebar">
+          <div class="sidebar__logo"></div>
+          <ul class="sidebar__list sidebar-list">
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M57 17V31.4C57 32.3548 57.4004 33.2705 58.113 33.9456C58.8256 34.6207 59.7922 35 60.8 35H76" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M68.5714 83H31.4286C29.4584 83 27.5689 82.2274 26.1758 80.8521C24.7827 79.4768 24 77.6116 24 75.6667V24.3333C24 22.3884 24.7827 20.5232 26.1758 19.1479C27.5689 17.7726 29.4584 17 31.4286 17H57.4286L76 35.3333V75.6667C76 77.6116 75.2173 79.4768 73.8242 80.8521C72.4311 82.2274 70.5416 83 68.5714 83Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar-item-button__text">Notes</span>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M42.875 24.7143C42.875 22.6683 43.6783 20.7062 45.1083 19.2595C46.5383 17.8128 48.4777 17 50.5 17C52.5223 17 54.4617 17.8128 55.8917 19.2595C57.3217 20.7062 58.125 22.6683 58.125 24.7143C62.5033 26.8088 66.2357 30.0693 68.9222 34.1462C71.6087 38.2231 73.1479 42.9627 73.375 47.8571V59.4286C73.6619 61.8266 74.5013 64.1229 75.8257 66.1328C77.1501 68.1426 78.9224 69.8097 81 71H20C22.0776 69.8097 23.8499 68.1426 25.1743 66.1328C26.4987 64.1229 27.3381 61.8266 27.625 59.4286V47.8571C27.8521 42.9627 29.3913 38.2231 32.0778 34.1462C34.7643 30.0693 38.4967 26.8088 42.875 24.7143Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M42 72V74.75C42 76.938 42.8955 79.0365 44.4896 80.5836C46.0837 82.1308 48.2457 83 50.5 83C52.7543 83 54.9163 82.1308 56.5104 80.5836C58.1045 79.0365 59 76.938 59 74.75V72" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar-item-button__text">Reminders</span>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M53.8 32C55.7096 32 57.5409 32.7676 58.8912 34.1339C60.2414 35.5003 61 37.3534 61 39.2857V83L43 72.0714L25 83V39.2857C25 37.3534 25.7586 35.5003 27.1088 34.1339C28.4591 32.7676 30.2904 32 32.2 32H53.8Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M41 20.6429C41.632 19.5337 42.5414 18.613 43.6365 17.9734C44.7316 17.3339 45.9738 16.9981 47.2378 17H68.8095C70.7165 17 72.5454 17.7676 73.8939 19.1339C75.2424 20.5003 76 22.3534 76 24.2857V68L72.4047 65.8143" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar-item-button__text">Tags</span>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M19 67V75C19 77.1217 19.8165 79.1566 21.2699 80.6569C22.7233 82.1571 24.6946 83 26.75 83H73.25C75.3054 83 77.2767 82.1571 78.7301 80.6569C80.1835 79.1566 81 77.1217 81 75V67" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M30 44L49.5 63L69 44" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M50 17V63" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar-item-button__text">Archive</span>
+              </button>
+            </li>
+            <li class="sidebar-list__item sidebar-item">
+              <button class="sidebar-item__button sidebar-item-button">
+                <svg class="sidebar-item-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 31H79" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M42 46V68" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M57 46V68" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M24 31L27.6429 75.5714C27.6429 77.5416 28.4105 79.4311 29.7768 80.8242C31.1431 82.2173 32.9963 83 34.9286 83H64.0714C66.0037 83 67.8569 82.2173 69.2232 80.8242C70.5895 79.4311 71.3571 77.5416 71.3571 75.5714L75 31" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M38 31V20.5C38 19.5717 38.4039 18.6815 39.1228 18.0251C39.8416 17.3687 40.8167 17 41.8333 17H57.1667C58.1833 17 59.1584 17.3687 59.8772 18.0251C60.5961 18.6815 61 19.5717 61 20.5V31" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar-item-button__text">Trash</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-block">
+      </div>
+    </main>
   </body>
 </html>

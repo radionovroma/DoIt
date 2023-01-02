@@ -1,0 +1,4 @@
+<svg class="checklist-button__icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="box" d="M74.75 17H25.25C20.6937 17 17 20.6937 17 25.25V74.75C17 79.3064 20.6937 83 25.25 83H74.75C79.3064 83 83 79.3064 83 74.75V25.25C83 20.6937 79.3064 17 74.75 17Z" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path class="check" d="M31 51L44 64L70 38" stroke="black" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
