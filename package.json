@@ -57,6 +57,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "masonry-layout": "^4.2.2",
     "reset-css": "^5.0.1"
   }
