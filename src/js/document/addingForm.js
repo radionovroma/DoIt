@@ -46,8 +46,7 @@ const addingForm = {
     [formInput, this.unfoldButton].forEach((item) => {
       item.addEventListener('click', () => {
         if (document.body.clientWidth < 1024) {
-          document.body.style.overflowY = 'hidden';
-          document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
+          document.querySelector('.wrapper').classList.add('frozen');
         }
         this.form.classList.add('active');
         const textarea = this.form.querySelector('.input-box__description');
@@ -118,7 +117,7 @@ const addingForm = {
   },
   rollbackForm() {
     if (document.body.clientWidth < 1024) {
-      document.body.style.overflowY = 'auto';
+      document.querySelector('.wrapper').classList.remove('frozen');
     }
     this.form.classList.remove('active');
     const textarea = this.form.querySelector('.input-box__description');

@@ -24,6 +24,12 @@ body {
   }
 }
 
+.frozen{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 main {
   display: flex;
   overflow: visible;
