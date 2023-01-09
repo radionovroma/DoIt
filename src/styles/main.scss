@@ -25,7 +25,7 @@ body {
 }
 
 .frozen{
-  position: relative;
+  position: fixed;
   height: 100vh;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
