@@ -47,6 +47,7 @@ const addingForm = {
       item.addEventListener('click', () => {
         if (document.body.clientWidth < 1024) {
           document.body.style.overflowY = 'hidden';
+          document.getElementsByTagName('html')[0].style.overflowY = 'hidden';
         }
         this.form.classList.add('active');
         const textarea = this.form.querySelector('.input-box__description');
