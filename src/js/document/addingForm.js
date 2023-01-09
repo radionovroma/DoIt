@@ -47,7 +47,6 @@ const addingForm = {
       item.addEventListener('click', () => {
         if (document.body.clientWidth < 1024) {
           document.body.style.position = 'fixed';
-          document.querySelector('.wrapper').classList.add('frozen');
         }
         this.form.classList.add('active');
         const textarea = this.form.querySelector('.input-box__description');
@@ -119,7 +118,6 @@ const addingForm = {
   rollbackForm() {
     if (document.body.clientWidth < 1024) {
       document.body.style.position = 'static';
-      document.querySelector('.wrapper').classList.remove('frozen');
     }
     this.form.classList.remove('active');
     const textarea = this.form.querySelector('.input-box__description');
