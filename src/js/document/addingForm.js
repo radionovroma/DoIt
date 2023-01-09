@@ -46,6 +46,7 @@ const addingForm = {
     [formInput, this.unfoldButton].forEach((item) => {
       item.addEventListener('click', () => {
         if (document.body.clientWidth < 1024) {
+          document.body.style.position = 'fixed';
           document.querySelector('.wrapper').classList.add('frozen');
         }
         this.form.classList.add('active');
@@ -117,6 +118,7 @@ const addingForm = {
   },
   rollbackForm() {
     if (document.body.clientWidth < 1024) {
+      document.body.style.position = 'static';
       document.querySelector('.wrapper').classList.remove('frozen');
     }
     this.form.classList.remove('active');
